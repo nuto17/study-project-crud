@@ -1,4 +1,4 @@
-package ru.nuto.studyProject.model;
+package ru.nuto.studyproject.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

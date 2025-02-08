@@ -1,11 +1,11 @@
-package ru.nuto.studyProject.controller;
+package ru.nuto.studyproject.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ru.nuto.studyProject.dto.UserDto;
-import ru.nuto.studyProject.mapper.UserMapper;
-import ru.nuto.studyProject.model.User;
-import ru.nuto.studyProject.service.UserService;
+import ru.nuto.studyproject.dto.UserDto;
+import ru.nuto.studyproject.mapper.UserMapper;
+import ru.nuto.studyproject.model.User;
+import ru.nuto.studyproject.service.UserService;
 
 import java.util.List;
 

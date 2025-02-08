@@ -1,15 +1,13 @@
-package ru.nuto.studyProject.service;
+package ru.nuto.studyproject.service;
 
 
 import jakarta.persistence.EntityNotFoundException;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.nuto.studyProject.model.User;
-import ru.nuto.studyProject.repository.UserRepository;
+import ru.nuto.studyproject.model.User;
+import ru.nuto.studyproject.repository.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service

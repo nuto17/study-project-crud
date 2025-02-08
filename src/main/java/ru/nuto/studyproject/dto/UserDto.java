@@ -1,4 +1,4 @@
-package ru.nuto.studyProject.dto;
+package ru.nuto.studyproject.dto;
 
 import lombok.Data;
 

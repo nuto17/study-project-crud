@@ -1,8 +1,8 @@
-package ru.nuto.studyProject.mapper;
+package ru.nuto.studyproject.mapper;
 
 import org.mapstruct.Mapper;
-import ru.nuto.studyProject.dto.UserDto;
-import ru.nuto.studyProject.model.User;
+import ru.nuto.studyproject.dto.UserDto;
+import ru.nuto.studyproject.model.User;
 
 import java.util.List;
 

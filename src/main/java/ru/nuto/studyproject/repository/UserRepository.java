@@ -1,8 +1,8 @@
-package ru.nuto.studyProject.repository;
+package ru.nuto.studyproject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.nuto.studyProject.model.User;
+import ru.nuto.studyproject.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
