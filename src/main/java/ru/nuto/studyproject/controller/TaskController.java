@@ -20,21 +20,17 @@ public class TaskController {
 
     @PostMapping
     public TaskDto saveUser(@RequestBody TaskDto taskDto) {
-
         Task task = mapper.toModel(taskDto);
         Task savedTask = taskService.saveTask(task);
         TaskDto savedTaskDto = mapper.toDto(savedTask);
         return savedTaskDto;
-
     }
 
     @GetMapping
     public List<TaskDto> tasks() {
-
         List<Task> tasks = taskService.getTasks();
         List<TaskDto> tasksDto = mapper.toDto(tasks);
         return tasksDto;
-
     }
 
     @DeleteMapping("/{id}")
@@ -44,11 +40,9 @@ public class TaskController {
 
     @PutMapping("/{id}")
     public TaskDto updateTask(@PathVariable("id") Long id, @RequestBody TaskDto taskDto) throws NotFoundTaskException {
-
         Task task = mapper.toModel(taskDto);
         Task updatedTask = taskService.updateTask(id, task);
         TaskDto updatedTaskDto = mapper.toDto(updatedTask);
         return updatedTaskDto;
-
     }
 }

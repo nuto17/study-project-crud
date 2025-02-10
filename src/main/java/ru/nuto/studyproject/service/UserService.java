@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.nuto.studyproject.model.User;
 import ru.nuto.studyproject.repository.UserRepository;
-
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -38,13 +37,11 @@ public class UserService {
 
     public User updateUser(Long id, User user) {
         User userById = getUserById(id);
-
         User buildedUser = User.builder()
                 .id(userById.getId())
                 .userName(user.getUserName())
                 .userAge(user.getUserAge())
                 .build();
-
         User updatedUser = userRepository.save(buildedUser);
         return updatedUser;
     }

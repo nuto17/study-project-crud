@@ -1,7 +1,6 @@
 package ru.nuto.studyproject.dto;
 
 import lombok.Data;
-
 import java.util.Date;
 
 @Data
