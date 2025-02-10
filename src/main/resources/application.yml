@@ -14,5 +14,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
   application:
     name: studyproject
