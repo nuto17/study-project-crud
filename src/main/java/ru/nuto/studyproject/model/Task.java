@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Table(name = "tasks")
 @AllArgsConstructor
@@ -21,7 +22,12 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String subjectName;
+    @ManyToMany
+    @JoinTable(
+            name = "task_subject",
+            joinColumns = @JoinColumn(name = "task_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id"))
+    private List<Subject> subjects;
 
     private Date timeStart;
 
