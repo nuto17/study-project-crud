@@ -11,6 +11,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface TaskMapper {
+
     @Mapping(target = "id",source = "taskDto.id")
     @Mapping(target = "timeStart",source = "taskDto.timeStart")
     @Mapping(target = "timeEnd",source = "taskDto.timeEnd")

@@ -36,7 +36,6 @@ public class TaskService {
         return allTasks;
     }
 
-
     public Task updateTask(Long id, Task task) throws NotFoundTaskException {
         Task taskById = getTaskById(id);
         Task updatedTask = Task.builder()
