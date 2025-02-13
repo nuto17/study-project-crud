@@ -30,5 +30,4 @@ public class SubjectController {
         List<SubjectDto> subjectsDto = subjectService.getSubjects();
         return subjectsDto;
     }
-
 }

@@ -23,7 +23,7 @@ public class Subject {
 
     private String subjectName;
 
-    @ManyToMany(mappedBy = "subjects")
+    @ManyToMany
     private List<Task> tasks;
 
 }

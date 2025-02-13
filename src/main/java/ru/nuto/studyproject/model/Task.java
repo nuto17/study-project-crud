@@ -26,7 +26,7 @@ public class Task {
     @JoinTable(
             name = "task_subject",
             joinColumns = @JoinColumn(name = "task_id"),
-            inverseJoinColumns = @JoinColumn(name = "subject_id"))
+            inverseJoinColumns = @JoinColumn(name = "subjects_id"))
     private List<Subject> subjects;
 
     private Date timeStart;
