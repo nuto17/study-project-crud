@@ -23,7 +23,7 @@ public class Subject {
 
     private String subjectName;
 
-    @OneToMany
+    @OneToMany(mappedBy = "subject")
     private List<Task> tasks;
 
 }

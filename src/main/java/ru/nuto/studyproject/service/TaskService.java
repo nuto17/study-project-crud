@@ -40,7 +40,7 @@ public class TaskService {
         Task taskById = getTaskById(id);
         Task updatedTask = Task.builder()
                 .id(taskById.getId())
-                .subjects(task.getSubjects())
+                .subject(task.getSubject())
                 .timeStart(task.getTimeStart())
                 .timeEnd(task.getTimeEnd())
                 .build();
