@@ -3,9 +3,9 @@ package ru.nuto.studyproject.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.nuto.studyproject.dto.TaskDto;
+import ru.nuto.studyproject.exception.NotFoundTaskException;
 import ru.nuto.studyproject.mapper.TaskMapper;
 import ru.nuto.studyproject.model.Task;
-import ru.nuto.studyproject.exception.NotFoundTaskException;
 import ru.nuto.studyproject.service.TaskService;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class TaskController {
     private final TaskService taskService;
 
     @PostMapping
-    public TaskDto saveUser(@RequestBody TaskDto taskDto) {
+    public TaskDto saveTask(@RequestBody TaskDto taskDto) {
         Task task = mapper.toModel(taskDto);
         Task savedTask = taskService.saveTask(task);
         TaskDto savedTaskDto = mapper.toDto(savedTask);

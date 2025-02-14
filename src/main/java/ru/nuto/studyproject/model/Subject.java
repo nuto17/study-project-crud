@@ -7,26 +7,23 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.util.List;
 
-@Table(name = "tasks")
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "subjects")
+@Data
 @Builder
-public class Task {
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "subject_id",nullable = false)
-    private Subject subject;
+    private String subjectName;
 
-    private Date timeStart;
-
-    private Date timeEnd;
+    @OneToMany(mappedBy = "subject")
+    private List<Task> tasks;
 
 }

@@ -1,12 +1,13 @@
 package ru.nuto.studyproject.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.nuto.studyproject.exception.NotFoundTaskException;
 import ru.nuto.studyproject.model.Task;
 import ru.nuto.studyproject.repository.TaskRepository;
+
 import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -30,20 +31,22 @@ public class TaskService {
         taskRepository.delete(taskById);
     }
 
-    public Task updateTask(Long id, Task task) throws NotFoundTaskException {
-        Task taskById = getTaskById(id);
-        Task buildedTask = Task.builder()
-                .id(taskById.getId())
-                .subjectName(task.getSubjectName())
-                .timeStart(task.getTimeStart())
-                .timeEnd(task.getTimeEnd())
-                .build();
-        Task updatedTask = taskRepository.save(buildedTask);
-        return updatedTask;
-    }
-
     public List<Task> getTasks() {
         List<Task> allTasks = taskRepository.findAll();
         return allTasks;
     }
+
+    public Task updateTask(Long id, Task task) throws NotFoundTaskException {
+        Task taskById = getTaskById(id);
+        Task updatedTask = Task.builder()
+                .id(taskById.getId())
+                .subject(task.getSubject())
+                .timeStart(task.getTimeStart())
+                .timeEnd(task.getTimeEnd())
+                .build();
+
+        Task saved = taskRepository.save(updatedTask);
+        return saved;
+    }
 }
+
