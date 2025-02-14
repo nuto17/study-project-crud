@@ -22,11 +22,8 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToMany
-    @JoinTable(
-            name = "task_subject",
-            joinColumns = @JoinColumn(name = "task_id"),
-            inverseJoinColumns = @JoinColumn(name = "subjects_id"))
+    @OneToMany
+    @JoinColumn(name = "subject_id")
     private List<Subject> subjects;
 
     private Date timeStart;
