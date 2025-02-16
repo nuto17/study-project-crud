@@ -18,7 +18,7 @@ public class SubjectController {
     private final SubjectMapper mapper;
 
     @PostMapping
-    public SubjectDto saveSubjectDto(@RequestBody SubjectDto subjectDto){
+    public SubjectDto saveSubjectDto(@RequestBody SubjectDto subjectDto) {
         Subject subject = mapper.toModel(subjectDto);
         Subject savedSubject = subjectService.saveSubject(subject);
         SubjectDto savedSubjectDto = mapper.toDto(savedSubject);
@@ -26,8 +26,21 @@ public class SubjectController {
     }
 
     @GetMapping
-    public List<SubjectDto> getSubjectsDto(){
+    public List<SubjectDto> getSubjects() {
         List<SubjectDto> subjectsDto = subjectService.getSubjects();
         return subjectsDto;
+    }
+
+    @PutMapping("/{id}")
+    public SubjectDto updateSubject(@PathVariable("id") Long id, @RequestBody SubjectDto subjectDto) {
+        Subject subject = mapper.toModel(subjectDto);
+        Subject updatedSubject = subjectService.updateSubject(id, subject);
+        SubjectDto updatedSubjectDto = mapper.toDto(updatedSubject);
+        return updatedSubjectDto;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteSubject(@PathVariable("id") Long id) {
+        subjectService.deleteSubject(id);
     }
 }

@@ -14,5 +14,4 @@ public class TaskDto {
     private Date timeStart;
 
     private Date timeEnd;
-
 }

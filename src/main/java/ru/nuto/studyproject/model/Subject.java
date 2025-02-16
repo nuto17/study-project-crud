@@ -7,8 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,12 +16,8 @@ import java.util.List;
 public class Subject {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String subjectName;
-
-    @OneToMany(mappedBy = "subject")
-    private List<Task> tasks;
-
 }

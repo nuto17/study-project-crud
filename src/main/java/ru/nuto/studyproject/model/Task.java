@@ -18,7 +18,7 @@ import java.util.Date;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -28,5 +28,4 @@ public class Task {
     private Date timeStart;
 
     private Date timeEnd;
-
 }

@@ -20,13 +20,13 @@ public class TaskService {
         return savedTask;
     }
 
-    public Task getTaskById(Long id) throws NotFoundTaskException {
+    public Task getTaskById(Long id) {
         Task taslById = taskRepository.findById(id)
                 .orElseThrow(() -> new NotFoundTaskException(id));
         return taslById;
     }
 
-    public void deleteTask(Long id) throws NotFoundTaskException {
+    public void deleteTask(Long id) {
         Task taskById = getTaskById(id);
         taskRepository.delete(taskById);
     }
@@ -36,7 +36,7 @@ public class TaskService {
         return allTasks;
     }
 
-    public Task updateTask(Long id, Task task) throws NotFoundTaskException {
+    public Task updateTask(Long id, Task task) {
         Task taskById = getTaskById(id);
         Task updatedTask = Task.builder()
                 .id(taskById.getId())
