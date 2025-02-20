@@ -9,6 +9,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface SubjectMapper {
 
+
     Subject toModel(SubjectDto subjectDto);
 
     SubjectDto toDto(Subject subject);

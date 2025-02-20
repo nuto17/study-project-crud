@@ -3,6 +3,7 @@ package ru.nuto.studyproject.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.nuto.studyproject.exception.NotFoundTaskException;
+import ru.nuto.studyproject.model.Subject;
 import ru.nuto.studyproject.model.Task;
 import ru.nuto.studyproject.repository.TaskRepository;
 
@@ -14,8 +15,13 @@ import java.util.List;
 public class TaskService {
 
     private final TaskRepository taskRepository;
+    private final SubjectService subjectService;
 
     public Task saveTask(Task task) {
+        Long subjectId = task.getSubject().getId();
+        Subject subjectById = subjectService.getSubjectById(subjectId);
+        task.setSubject(subjectById);
+
         Task savedTask = taskRepository.save(task);
         return savedTask;
     }

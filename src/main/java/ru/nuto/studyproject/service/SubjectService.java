@@ -33,12 +33,19 @@ public class SubjectService {
         return subjectById;
     }
 
+    public Subject getSubjectById(Long id){
+        Subject subjectById = subjectRepository.findById(id)
+                .orElseThrow(() -> new NotFoundSubjectException(id));
+        return subjectById;
+    }
+
     public Subject updateSubject(Long id,Subject subject) {
         Subject subjectById = getSubject(id);
         Subject updatedSubject = Subject.builder()
-                .subjectName(subject.getSubjectName())
+                .name(subject.getName())
                 .id(subjectById.getId())
                 .build();
+
         Subject savedSubject = subjectRepository.save(updatedSubject);
         return savedSubject;
     }
