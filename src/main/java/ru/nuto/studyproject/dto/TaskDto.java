@@ -9,7 +9,7 @@ public class TaskDto {
 
     private Long id;
 
-    private SubjectDto subjectDto;
+    private SubjectDto subject;
 
     private Date timeStart;
 
