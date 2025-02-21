@@ -7,25 +7,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
-@Table(name = "tasks")
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "subjects")
+@Data
 @Builder
-public class Task {
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "subject_id",nullable = false)
-    private Subject subject;
-
-    private Date timeStart;
-
-    private Date timeEnd;
+    private String name;
 }

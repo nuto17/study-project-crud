@@ -5,11 +5,9 @@ import org.springframework.web.bind.annotation.*;
 import ru.nuto.studyproject.dto.TaskDto;
 import ru.nuto.studyproject.mapper.TaskMapper;
 import ru.nuto.studyproject.model.Task;
-import ru.nuto.studyproject.exception.NotFoundTaskException;
 import ru.nuto.studyproject.service.TaskService;
 
 import java.util.List;
-
 @RestController
 @RequestMapping(path = "api/tasks")
 @RequiredArgsConstructor
@@ -19,7 +17,7 @@ public class TaskController {
     private final TaskService taskService;
 
     @PostMapping
-    public TaskDto saveUser(@RequestBody TaskDto taskDto) {
+    public TaskDto saveTask(@RequestBody TaskDto taskDto) {
         Task task = mapper.toModel(taskDto);
         Task savedTask = taskService.saveTask(task);
         TaskDto savedTaskDto = mapper.toDto(savedTask);
@@ -34,12 +32,12 @@ public class TaskController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable("id") Long id) throws NotFoundTaskException {
+    public void deleteTask(@PathVariable("id") Long id) {
         taskService.deleteTask(id);
     }
 
     @PutMapping("/{id}")
-    public TaskDto updateTask(@PathVariable("id") Long id, @RequestBody TaskDto taskDto) throws NotFoundTaskException {
+    public TaskDto updateTask(@PathVariable("id") Long id, @RequestBody TaskDto taskDto) {
         Task task = mapper.toModel(taskDto);
         Task updatedTask = taskService.updateTask(id, task);
         TaskDto updatedTaskDto = mapper.toDto(updatedTask);
