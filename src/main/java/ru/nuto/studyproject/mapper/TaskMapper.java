@@ -14,13 +14,13 @@ import java.util.List;
 public interface TaskMapper {
 
     @Mapping(target = "id",source = "taskDto.id")
-    @Mapping(target = "subject",source = "taskDto.subjectDto",qualifiedByName = "mapSubjectDtoToSubject")
+    @Mapping(target = "subject",source = "taskDto.subject",qualifiedByName = "mapSubjectDtoToSubject")
     @Mapping(target = "timeStart",source = "taskDto.timeStart")
     @Mapping(target = "timeEnd",source = "taskDto.timeEnd")
     Task toModel(TaskDto taskDto);
 
     @Mapping(target = "id",source = "task.id")
-    @Mapping(target = "subjectDto",source = "task.subject",qualifiedByName = "mapSubjectToSubjectDto")
+    @Mapping(target = "subject",source = "task.subject",qualifiedByName = "mapSubjectToSubjectDto")
     @Mapping(target = "timeStart",source = "task.timeStart")
     @Mapping(target = "timeEnd",source = "task.timeEnd")
     TaskDto toDto(Task task);
