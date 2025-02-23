@@ -1,16 +1,16 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5431/users-db
+    url: jdbc:postgresql://localhost:5431/tasks-db
     username: postgres
-    password: 123456
+    password: 12345
     driver-class-name: org.postgresql.Driver
-    flyway:
-      enabled: true
-      validate-on-migrate: true
+  flyway:
+    enabled: true
+    validate-on-migrate: true
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
